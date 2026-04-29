@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import "./ImcCalc.css";
 
 const ImcCalc = () => {
   return (
