@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import ImcCalc from "./components/ImcCalc";
-import { data } from "./data/data.js";
 import ImcTable from "./components/ImcTable";
+import { data } from "./data/data";
 
 function App() {
   const calcImc = (e, height, weight) => {
@@ -17,14 +17,14 @@ function App() {
     setImc(imcResult);
   };
 
-  const [imc, setImc] = useState("");
+  const [imc, setImc] = useState("25");
   const [info, setInfo] = useState("");
   const [infoClass, setInfoClass] = useState("");
 
   return (
     <div>
       <div className="container">
-        {!imc ? <ImcCalc calcImc={calcImc} /> : <ImcTable />}
+        {!imc ? <ImcCalc calcImc={calcImc} /> : <ImcTable data={data} />}
       </div>
     </div>
   );
